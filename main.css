@@ -1,0 +1,226 @@
+body{
+   background-color:#dbdbdb;
+   
+}
+
+#mainTitle{
+    text-align:center;
+}
+
+#enemyPokemon{
+position: relative;
+left: 600px;
+top: 100px;
+}
+
+img{
+    height:250px;
+    
+}
+
+#p1Stats
+
+
+#pokemonName1{
+   position: relative;
+   float:left;
+   left: 290px;
+   bottom:150px;
+   color:white;
+   font-size:1.5em;
+}
+
+#pokemonName2{
+   position: relative;
+   float:left;
+   left: 360px;
+   bottom:150px;
+   color:black;
+   font-size:1.5em;
+}
+
+
+
+#healthp1{
+    position: relative;
+    float:left;
+    left: 360px;
+    bottom:120px;
+}
+
+#hpP1{
+   position: relative;
+   float:left;
+   left: 520px;
+   bottom:130px;
+   color:white;
+}
+
+#healthp2{
+    position: relative;
+    float:left;
+    left: 520px;
+    bottom:130px;
+   
+}
+
+
+#hpP2{
+   position: relative;
+   float:left;
+   left: 580px;
+   bottom:130px;
+   color: black;
+}
+
+#container{
+width:50%;
+margin: auto;
+background-image: url(background/battle-background1.jpg);
+background-size: cover;
+border-radius:10px;
+ box-shadow: 5px 5px 15px hsl(0, 0%, 0%, 0.3);
+ text-align: left;
+ }
+
+ #myAction{
+   margin-left: 2px;
+ }
+
+
+ .fightButton{
+    font-size:30px;
+    margin:10px;
+    border-radius: 15px;
+    padding: 10px;   
+    background-color:hsla(0, 5%, 88%, 0.6);
+    border:2px solid red;
+    cursor:pointer;
+    color:#000000;
+ }
+ 
+
+.fightButtonPressed{
+   font-size:30px;
+   margin:10px;
+   border-radius: 15px;
+   padding: 10px;   
+   background-color: #83116e99;
+   border:2px solid red;
+   cursor:pointer;
+   color:#ffffff;
+ }
+
+ .fightButtonHidden{
+   visibility: hidden;
+
+ }
+
+ .switchButton{
+    font-size:30px;
+    margin:10px;
+    border-radius: 15px;
+    padding: 10px;   
+    background-color:hsla(0, 5%, 88%, 0.6);
+    border:2px solid green;
+    cursor:pointer;
+    color:#000000;
+ }
+
+ .switchButtonPressed{
+   font-size:30px;
+   margin:10px;
+   border-radius: 15px;
+   padding: 10px;   
+   background-color:#83116e99;
+   border:2px solid red;
+   cursor:pointer;
+   color:#ffffff;
+ }
+
+ .switchButtonHidden{
+   visibility:hidden;
+ }
+
+ .medicineButton{
+    font-size:30px;
+    margin:10px;
+    border-radius: 15px;
+    padding: 10px;   
+    background-color:hsla(0, 5%, 88%, 0.6);
+    border:2px solid yellow;
+    cursor:pointer;
+    color:#000000;
+
+ }
+
+.medicineButtonPressed{
+   font-size:30px;
+   margin:10px;
+   border-radius: 15px;
+   padding: 10px;   
+   background-color:rgb(226, 226, 17);
+   border:2px solid yellow;
+   cursor:pointer;
+   color:#ffffff;
+   position:relative;
+   left:0px;
+   bottom:80px;
+}
+  
+.medicineButtonHidden{
+   visibility: hidden;
+}
+
+ .escapeButton{
+    font-size:30px;
+    margin:10px;
+    border-radius: 15px;
+    padding: 10px;   
+    background-color:hsla(0, 5%, 88%, 0.6);
+    border:2px solid blue;
+    cursor:pointer;
+    color:#000000;
+  
+ }
+
+ .escapeButtonPressed{
+   font-size:30px;
+   margin:10px;
+   border-radius: 15px;
+   padding: 10px;   
+   background-color:rgb(43, 114, 228);
+   border:2px solid blue;
+   cursor:pointer;
+   color:#ffffff;
+   position:relative;
+   right:210px;
+   bottom:160px;
+}
+
+.escapeButtonPressed:hover{
+
+   background-color:rgb(43, 114, 228);
+
+}
+
+.escapeButtonHidden{
+   visibility: hidden;
+}
+
+#myAction{
+    float: left;
+    position: relative;
+    right:200px;
+}
+
+ #controlContainer{
+    text-align: right;
+    font-size:30px;
+    border: 5px solid black;
+    width:50%;
+    margin: auto;
+    }
+
+    /*
+

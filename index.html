@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel = "stylesheet" href="main.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokemon Battle</title>
+</head>
+<body>
+    
+    <h2 id="mainTitle">Pokemon Battle Game</h2>
+    
+    <div id="container">
+        
+        <div id="enemyPokemonDiv">
+        <img src="Sprites/arceus-normal Front.gif" id="enemyPokemon" alt="Palkia-front">
+        <div id="p1Stats">
+            
+        <div id="healthBarP1">
+            <div id="hpP1"><h3>100</h3></div> 
+            <progress value="100" max="100" id="healthp1"></progress>
+            <div id="pokemonName1">Arceus</div>
+
+
+        </div>
+
+        
+        </div>
+          
+    </div>
+    
+    <div id=" myPokemonDiv">
+        <img src="Sprites/palkia Back.gif" id=" myPokemon" alt="Palkia-back">
+        <div id="p2Stats">
+            <div id="healthBarP2">
+                <div id="hpP2"><h3>100/100</h3></div>
+                <progress value="100" max="100" id="healthp2"></progress>
+        <div id="healthBarP1"></div>
+        <div id="pokemonName2">Palkia</div>
+    
+
+            </div>
+
+       </div>
+
+
+    </div>
+   </div>
+</div>
+<div id="controlContainer">
+ <p id="myAction">What will You Do?</p>
+<div id=" button-container">
+    <button id="fightBtn" class="fightButton">Fight</button>
+    <button id="switchBtn" class="switchButton">Switch</button><br>
+    <button id="medicineBtn" class="medicineButton">Medicine</button>
+    <button id="escapeBtn"class="escapeButton">Escape</button>
+  
+   </div>
+</div>
+
+    <script src="index.js"></script>
+</body>
+</html>
