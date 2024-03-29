@@ -3,7 +3,9 @@ const DELAY_SPECIAL_REND = 3800;
 const DELAY_DRACO_METEOR = 3800;
 const DELAY_THUNDER_DAMAGE = 2200;
 const DELAY_TAKE_DAMAGE = 2800;
-const DELAY_RESET_TEXT = 5000;
+const DELAY_OPPONENT_ATTACK = 6000;
+const DELAY_RESET_TEXT = 7000;
+
 
 //Dom elements
 let healthBarP1 = document.getElementById("hpP1");
@@ -34,8 +36,8 @@ const hydroPumpAudio = new Audio("https://epsilon.vgmsite.com/soundtracks/pokemo
 
 const OutrageAudio = new Audio("https://epsilon.vgmsite.com/soundtracks/pokemon-sfx-gen-4-attack-moves-dppl-hg-ss/ymomvvsqfm/Outrage.mp3");
 const extremeSpeedAudio = new Audio("https://epsilon.vgmsite.com/soundtracks/pokemon-sfx-gen-4-attack-moves-dppl-hg-ss/skildcdkaa/Extreme%20Speed.mp3");
-const earthquake = new Audio("https://epsilon.vgmsite.com/soundtracks/pokemon-sfx-gen-4-attack-moves-dppl-hg-ss/jcjuqoeair/Earthquake.mp3");
-const recover = new Audio("https://epsilon.vgmsite.com/soundtracks/pokemon-sfx-gen-4-attack-moves-dppl-hg-ss/ognsvhbaku/Recover.mp3");
+const earthquakeAudio = new Audio("https://epsilon.vgmsite.com/soundtracks/pokemon-sfx-gen-4-attack-moves-dppl-hg-ss/jcjuqoeair/Earthquake.mp3");
+const recoverAudio = new Audio("https://epsilon.vgmsite.com/soundtracks/pokemon-sfx-gen-4-attack-moves-dppl-hg-ss/ognsvhbaku/Recover.mp3");
 
 
 // Available Pokemon
@@ -119,14 +121,13 @@ function spacialRend(){
   setTimeout(attackText, DELAY_SPECIAL_REND);
   setTimeout(calculateDamage, DELAY_TAKE_DAMAGE);
  // setTimeout(damageText, 4800);
-  setTimeout(resetTextAndButtons, DELAY_RESET_TEXT);
+  setTimeout(earthquake, DELAY_OPPONENT_ATTACK);
 
   fightbtn.classList.add("fightButtonHidden");
   switchbtn.classList.add("switchButtonHidden");
   medicinebtn.classList.add("medicineButtonHidden");
   escapebtn.classList.add("escapeButtonHidden");
  
-
  }
 
  
@@ -163,6 +164,8 @@ function spacialRend(){
   setTimeout(attackText, DELAY_DRACO_METEOR);
   setTimeout(calculateDamage, DELAY_THUNDER_DAMAGE);
  // setTimeout(damageText, 4800);
+
+
   setTimeout(resetTextAndButtons, DELAY_RESET_TEXT);
 
   fightbtn.classList.add("fightButtonHidden");
@@ -189,7 +192,7 @@ function spacialRend(){
   setTimeout(attackText, DELAY_DRACO_METEOR);
   setTimeout(calculateDamage, DELAY_THUNDER_DAMAGE);
  // setTimeout(damageText, 4800);
-  setTimeout(resetTextAndButtons, DELAY_RESET_TEXT);
+  //setTimeout(resetTextAndButtons, DELAY_RESET_TEXT);
 
   fightbtn.classList.add("fightButtonHidden");
   switchbtn.classList.add("switchButtonHidden");
@@ -206,6 +209,14 @@ function spacialRend(){
   healthBarP1.textContent = healthP1.value;
 }
 
+   function calculatOpDamage(){
+
+    hitWeak.play();
+    healthP2.value -= Math.floor(Math.random() * (12 - 22) + 22);
+    healthBarP2.textContent = healthP2.value;
+
+   }
+
 // Display attack text
 
  function attackText() {
@@ -213,6 +224,14 @@ function spacialRend(){
    mytext.textContent = "It's not Very Effective";
   
   }
+
+  function opAttackText() {
+  
+    mytext.textContent = "It's not Very Effective";
+   
+  }
+
+  
 
  /* function damageText(){
     
@@ -223,29 +242,33 @@ function spacialRend(){
 
 // Enemy Pokemon random attacks 
 
+randomAttacks = [outrage,extremeSpeed,earthquake,recover];
+
+
+
 
 // Different attacks  of Enemy Pokemon 
 
-function Outrage(){
-  mytext.textContent = "Arceus Used " + pokemonMoves[3][1];
+function outrage(){
+  mytext.textContent = `Arceus Used ${availablePokemon.Arceus.moves[0]}`;
   OutrageAudio.play();
-}
- /* setTimeout(attackText, DELAY_SPECIAL_REND);
-  setTimeout(calculateDamage, DELAY_TAKE_DAMAGE);
+  setTimeout(opAttackText, DELAY_OPPONENT_ATTACK);
+  setTimeout(calculatOpDamage, DELAY_TAKE_DAMAGE);
  // setTimeout(damageText, 4800);
   setTimeout(resetTextAndButtons, DELAY_RESET_TEXT);
+  
   fightbtn.classList.add("fightButtonHidden");
   switchbtn.classList.add("switchButtonHidden");
   medicinebtn.classList.add("medicineButtonHidden");
   escapebtn.classList.add("escapeButtonHidden");
- }
-
+     
+   }
  
- function dracoMeteor(){
-  mytext.textContent = "Palkia Used " + pokemonMoves[0][1];
-  dracoMeteorAudio.play();
+ function extremeSpeed(){
+  mytext.textContent =`Arceus Used ${availablePokemon.Arceus.moves[1]}`;
+  //dracoMeteorAudio.play();
   setTimeout(attackText, DELAY_DRACO_METEOR);
-  setTimeout(calculateDamage, DELAY_TAKE_DAMAGE);
+  setTimeout(calculatOpDamage, DELAY_TAKE_DAMAGE);
  // setTimeout(damageText, 4800);
   setTimeout(resetTextAndButtons, DELAY_RESET_TEXT);
   fightbtn.classList.add("fightButtonHidden");
@@ -254,11 +277,11 @@ function Outrage(){
   escapebtn.classList.add("escapeButtonHidden");
  }
 
-  function thunder(){
-  mytext.textContent = "Palkia Used " + pokemonMoves[0][3];
-  thunderAudio.play();
+  function earthquake(){
+  mytext.textContent = `Arceus Used ${availablePokemon.Arceus.moves[2]}`;
+  //thunderAudio.play();
   setTimeout(attackText, DELAY_DRACO_METEOR);
-  setTimeout(calculateDamage, DELAY_THUNDER_DAMAGE);
+  setTimeout(calculatOpDamage, DELAY_THUNDER_DAMAGE);
  // setTimeout(damageText, 4800);
   setTimeout(resetTextAndButtons, DELAY_RESET_TEXT);
   fightbtn.classList.add("fightButtonHidden");
@@ -268,11 +291,11 @@ function Outrage(){
  }
 
 
- function hydroPump(){
-  mytext.textContent = "Palkia Used " + pokemonMoves[0][2];
- hydroPumpAudio.play();
+ function recover(){
+  mytext.textContent = `Arceus Used ${availablePokemon.Arceus.moves[3]}`;
+  //hydroPumpAudio.play();
   setTimeout(attackText, DELAY_DRACO_METEOR);
-  setTimeout(calculateDamage, DELAY_THUNDER_DAMAGE);
+  setTimeout(calculatOpDamage, DELAY_THUNDER_DAMAGE);
  // setTimeout(damageText, 4800);
   setTimeout(resetTextAndButtons, DELAY_RESET_TEXT);
   fightbtn.classList.add("fightButtonHidden");
@@ -280,12 +303,6 @@ function Outrage(){
   medicinebtn.classList.add("medicineButtonHidden");
   escapebtn.classList.add("escapeButtonHidden");
  }
-
-*/
-
-
-
-
 
  // Reset text and buttons to out Of Fight Mode
 
