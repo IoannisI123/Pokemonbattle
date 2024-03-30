@@ -205,14 +205,14 @@ function spacialRend(){
 
  function calculateDamage(){
   hitWeak.play();
-  healthP1.value -= Math.floor(Math.random() * (22 - 30) + 30);
+  healthP1.value -= Math.floor(Math.random() * (50 - 20) + 50);
   healthBarP1.textContent = healthP1.value;
 }
 
    function calculateOpDamage(){
 
     hitWeak.play();
-    healthP2.value -= Math.floor(Math.random() * (22 - 30) + 30);
+    healthP2.value -= Math.floor(Math.random() * ( 50 - 20) + 50);
     healthBarP2.textContent = healthP2.value;
 
    }
@@ -220,7 +220,7 @@ function spacialRend(){
    function calculateSuperEffOpDamage(){
 
     hitStrong.play();
-    healthP2.value -= Math.floor(Math.random() * (33 - 40) + 40);
+    healthP2.value -= Math.floor(Math.random() * (10 - 40) + 40);
     healthBarP2.textContent = healthP2.value;
 
    }
@@ -268,7 +268,7 @@ function spacialRend(){
 
 // Enemy Pokemon random attack
 
-const opAttacks = ['outrage','outrage','shadow claw','shadow claw','earthquake','earthquake','recover'];
+const opAttacks = ['outrage','outrage','shadow claw','shadow claw','earthquake','recover'];
 
 let randomAttack;
 
@@ -278,7 +278,7 @@ function randomOpAttack(){
   if (randomAttack == 'outrage') {
     outrage();
    }
-   if (randomAttack == 'shadow claw') {
+   if (randomAttack == 'Shadow claw') {
     shadowClaw();
    }
    if (randomAttack == 'earthquake') {
