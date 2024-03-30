@@ -138,7 +138,7 @@ function spacialRend(){
   setTimeout(attackText, DELAY_DRACO_METEOR);
   setTimeout(calculateDamage, DELAY_TAKE_DAMAGE);
  // setTimeout(damageText, 4800);
-  setTimeout(resetTextAndButtons, DELAY_RESET_TEXT);
+ setTimeout(earthquake, DELAY_OPPONENT_ATTACK);
 
   fightbtn.classList.add("fightButtonHidden");
   switchbtn.classList.add("switchButtonHidden");
@@ -164,9 +164,7 @@ function spacialRend(){
   setTimeout(attackText, DELAY_DRACO_METEOR);
   setTimeout(calculateDamage, DELAY_THUNDER_DAMAGE);
  // setTimeout(damageText, 4800);
-
-
-  setTimeout(resetTextAndButtons, DELAY_RESET_TEXT);
+ setTimeout(earthquake, DELAY_OPPONENT_ATTACK);
 
   fightbtn.classList.add("fightButtonHidden");
   switchbtn.classList.add("switchButtonHidden");
@@ -192,7 +190,7 @@ function spacialRend(){
   setTimeout(attackText, DELAY_DRACO_METEOR);
   setTimeout(calculateDamage, DELAY_THUNDER_DAMAGE);
  // setTimeout(damageText, 4800);
-  //setTimeout(resetTextAndButtons, DELAY_RESET_TEXT);
+  setTimeout(earthquake, DELAY_OPPONENT_ATTACK);
 
   fightbtn.classList.add("fightButtonHidden");
   switchbtn.classList.add("switchButtonHidden");
@@ -256,13 +254,8 @@ function outrage(){
   setTimeout(calculatOpDamage, DELAY_TAKE_DAMAGE);
  // setTimeout(damageText, 4800);
   setTimeout(resetTextAndButtons, DELAY_RESET_TEXT);
-  
-  fightbtn.classList.add("fightButtonHidden");
-  switchbtn.classList.add("switchButtonHidden");
-  medicinebtn.classList.add("medicineButtonHidden");
-  escapebtn.classList.add("escapeButtonHidden");
-     
-   }
+
+     }
  
  function extremeSpeed(){
   mytext.textContent =`Arceus Used ${availablePokemon.Arceus.moves[1]}`;
