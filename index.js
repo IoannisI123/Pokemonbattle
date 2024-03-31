@@ -20,6 +20,7 @@ const mytext = document.querySelector("#myAction");
 const xpText = document.querySelector("#xpText");
 let healthP1 = document.querySelector("#healthp1");
 let healthP2 = document.querySelector("#healthp2");
+const myPokemom = document.getElementById("myPokemon");
 let damageReceivedP1;
 let disableButtons = document.getElementsByClassName("buttons").disabled = true;
 
@@ -60,6 +61,11 @@ let isFighting = false;
 let isSwitchingPokemon = false;
 let switchPokemonPressed = false;
 
+let isPalkiaFighting = true;
+let isDialgaFighting = false;
+let isGiratinafighting = false;
+let isArceusFighting = false;
+
 //Setting Fighting State
 
 fightbtn.onclick = function(){
@@ -67,17 +73,20 @@ fightbtn.onclick = function(){
   if(!isFighting && !isSwitchingPokemon){
    fight();
 
-} else if(isSwitchingPokemon){
+} else if(isSwitchingPokemon && !isPalkiaFighting){
   
  switchToPalkia();
 
-} else {
+} else if(isSwitchingPokemon && isPalkiaFighting) {
 
+  mytext.textContent = "You can't switch to that."
+
+} else {
   spacialRend();
 }
 }
 
-//Perform Attacks
+//Perform Attacks & Switch Pokemon
 
 switchbtn.onclick = function(){
   
@@ -86,7 +95,7 @@ switchbtn.onclick = function(){
  
  }  else if (!isSwitchingPokemon){
    
-  ( mytext.textContent = "Are you Switching Pokemon?");
+  mytext.textContent = "Are you Switching Pokemon?";
    return isSwitchingPokemon= true;
 
  } else if(isSwitchingPokemon && !switchPokemonPressed) {
@@ -94,9 +103,11 @@ switchbtn.onclick = function(){
     switchPokeomn();
     return switchPokemonPressed = true;
 
- } else if (isSwitchingPokemon && switchPokemonPressed){
-  switchToDialga();
+ } else if (isSwitchingPokemon && switchPokemonPressed && !isDialgaFighting){
+    switchToDialga();
   
+ } else if (isSwitchingPokemon && switchPokemonPressed && isDialgaFighting){
+  mytext.textContent = "You can't switch to that";
  }
  }
  
@@ -125,7 +136,7 @@ return isFighting=true;
 function switchPokeomn(){
 
   mytext.textContent = `Palkia, come back!`;
-
+  
   fightbtn.classList.add("fightButtonSwitched");
 switchbtn.classList.add("switchButtonSwitched");
 medicinebtn.classList.add("medicineButtonSwitched");
@@ -139,42 +150,40 @@ escapebtn.innerText = "Arceus";
 fightbtn.insertAdjacentHTML("beforebegin", `<img src = "Sprites/Palkia switch Icon.png" id="palkiaIcon"/>`);
 switchbtn.insertAdjacentHTML("beforebegin",`<img src = "Sprites/dialga switch icon.png" id="palkiaIcon"/>`);
 medicinebtn.insertAdjacentHTML("beforebegin",`<img src = "Sprites/giratina orgin Icon.png" id="palkiaIcon"/>`);
-medicinebtn.classList.add("medicineButtonSwitched");
-
-
+escapebtn.insertAdjacentHTML("beforebegin",`<img src = "Sprites/arceus icon.png" id="palkiaIcon"/>`);
+myPokemom.classList.add("myPokemonImg");
 
  }
 
 
  // Switch to Different Pokemons 
-
-// Switch To Palkia
  
 function switchToPalkia(){
 
-  mytext.textContent = `Palkia, come out!`;
-
+  mytext.textContent = "Palkia, come out!";
+  myPokemom.innerHTML = '<img src="Sprites/palkia Back.gif"/>';
 
 }
 
 function switchToDialga(){
-
-  mytext.textContent = `Dialga, come out!`;
-
-
+  myPokemom.src = 'Sprites/dialga back.gif';
+  mytext.textContent = "Dialga, come out!";
+  
+  
+   
 }
 
 function switchToGiaratina(){
 
   mytext.textContent = `Giratina, come out!`;
-
+  
 
 }
 
 function switchToArceus(){
 
   mytext.textContent = `Arceus, come out!`;
-
+   
 
 }
 
@@ -188,10 +197,23 @@ medicinebtn.onclick = function(){
   if(isFighting && !isSwitchingPokemon){
     hydroPump();
      
- } else if (isSwitchingPokemon)[
-  heal()
- ]
- }
+     }  else if (!isSwitchingPokemon){
+       
+      mytext.textContent = "Are you Switching Pokemon?";
+       return isSwitchingPokemon= true;
+    
+     } else if(isSwitchingPokemon && !switchPokemonPressed) {
+    
+        switchPokeomn();
+        return switchPokemonPressed = true;
+    
+     } else if (isSwitchingPokemon && switchPokemonPressed && !isDialgaFighting){
+        switchToGiaratina();
+      
+     } else if (isSwitchingPokemon && switchPokemonPressed && isGiratinafighting){
+      mytext.textContent = "You can't switch to that";
+     }
+     }
 
 
 

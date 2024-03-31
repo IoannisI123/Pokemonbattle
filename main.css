@@ -275,5 +275,9 @@ border-radius:10px;
       width: 40px;
       height: auto;
     }
+    
+    .myPokemonImg{
+      visibility: hidden;
+    }
     /*
 
