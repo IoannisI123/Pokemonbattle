@@ -27,21 +27,7 @@ let disableButtons = document.getElementsByClassName("buttons").disabled = true;
 //Sound effects Audio(Dom)
 
 const hitWeak = new Audio("https://static.wikia.nocookie.net/soundeffects/images/5/50/Hit_Weak_Not_Very_Effective.mp3");
-const hitStrong = new Audio("https://static.wikia.nocookie.net/soundeffects/images/c/c2/Hit_Super_Effective.mp3")
-//Palkia Attacks Audio 
-
-const SpacialRendAudio = new Audio("https://epsilon.vgmsite.com/soundtracks/pokemon-sfx-gen-4-attack-moves-dppl-hg-ss/zxleqbbksw/Spacial%20Rend.mp3");
-const dracoMeteorAudio = new Audio("https://epsilon.vgmsite.com/soundtracks/pokemon-sfx-gen-4-attack-moves-dppl-hg-ss/suixdkkdnp/Draco%20Meteor%20part%202.mp3");
-const thunderAudio = new Audio("https://epsilon.vgmsite.com/soundtracks/pokemon-sfx-gen-4-attack-moves-dppl-hg-ss/hbxbekeqme/Thunder.mp3");
-const hydroPumpAudio = new Audio("https://epsilon.vgmsite.com/soundtracks/pokemon-sfx-gen-4-attack-moves-dppl-hg-ss/amtoihsobt/Hydro%20Pump.mp3");
-
-//Arceus Attacks Audio
-
-const OutrageAudio = new Audio("https://epsilon.vgmsite.com/soundtracks/pokemon-sfx-gen-4-attack-moves-dppl-hg-ss/ymomvvsqfm/Outrage.mp3");
-const extremeSpeedAudio = new Audio("https://epsilon.vgmsite.com/soundtracks/pokemon-sfx-gen-4-attack-moves-dppl-hg-ss/skildcdkaa/Extreme%20Speed.mp3");
-const earthquakeAudio = new Audio("https://epsilon.vgmsite.com/soundtracks/pokemon-sfx-gen-4-attack-moves-dppl-hg-ss/jcjuqoeair/Earthquake.mp3");
-const recoverAudio = new Audio("https://epsilon.vgmsite.com/soundtracks/pokemon-sfx-gen-4-attack-moves-dppl-hg-ss/ognsvhbaku/Recover.mp3");
-
+const hitStrong = new Audio("https://static.wikia.nocookie.net/soundeffects/images/c/c2/Hit_Super_Effective.mp3");
 
 // Available Pokemon
 
@@ -213,7 +199,6 @@ medicinebtn.onclick = function(){
 
 function spacialRend(){
   mytext.textContent = "Palkia Used " + availablePokemon.Palkia.moves[0];
-  SpacialRendAudio.play();
 
   setTimeout(attackText, DELAY_SPECIAL_REND);
   setTimeout(calculateDamage, DELAY_TAKE_DAMAGE);
@@ -230,7 +215,7 @@ function spacialRend(){
  
  function dracoMeteor(){
   mytext.textContent = "Palkia Used " + availablePokemon.Palkia.moves[1];
-  dracoMeteorAudio.play();
+
 
   setTimeout(attackText, DELAY_DRACO_METEOR);
   setTimeout(calculateDamage, DELAY_TAKE_DAMAGE);
@@ -256,7 +241,7 @@ function spacialRend(){
  
  function thunder(){
   mytext.textContent = "Palkia Used " + availablePokemon.Palkia.moves[3];
-  thunderAudio.play();
+ 
 
   setTimeout(attackText, DELAY_DRACO_METEOR);
   setTimeout(calculateDamage, DELAY_THUNDER_DAMAGE);
@@ -274,7 +259,7 @@ function spacialRend(){
  
  function hydroPump(){
   mytext.textContent = "Palkia Used " + availablePokemon.Palkia.moves[2];
- hydroPumpAudio.play();
+ 
 
   setTimeout(attackText, DELAY_DRACO_METEOR);
   setTimeout(calculateDamage, DELAY_THUNDER_DAMAGE);
@@ -381,7 +366,6 @@ function randomOpAttack(){
 
 function outrage(){
   mytext.textContent = `Arceus Used ${availablePokemon.Arceus.moves[0]}`;
-  OutrageAudio.play();
   setTimeout(superEffOpAttackText, DELAY_OPPONENT_ATTACK);
   setTimeout(calculateSuperEffOpDamage, DELAY_TAKE_DAMAGE);
  // setTimeout(damageText, 4800);
@@ -390,7 +374,7 @@ function outrage(){
  
  function shadowClaw(){
   mytext.textContent =`Arceus Used ${availablePokemon.Arceus.moves[1]}`;
-  //dracoMeteorAudio.play();
+  
   setTimeout(attackText, DELAY_DRACO_METEOR);
   setTimeout(calculateOpDamage, DELAY_TAKE_DAMAGE);
  // setTimeout(damageText, 4800);
@@ -400,7 +384,7 @@ function outrage(){
 
   function earthquake(){
   mytext.textContent = `Arceus Used ${availablePokemon.Arceus.moves[2]}`;
-  //thunderAudio.play();
+  
   setTimeout(attackText, DELAY_DRACO_METEOR);
   setTimeout(calculateOpDamage, DELAY_THUNDER_DAMAGE);
  // setTimeout(damageText, 4800);
@@ -411,7 +395,7 @@ function outrage(){
 
  function recover(){
   mytext.textContent = `Arceus Used ${availablePokemon.Arceus.moves[3]}`;
-  //hydroPumpAudio.play();
+  
   setTimeout(recoverHealthText, DELAY_RECOVERY_TEXT);
   setTimeout(healOpHealth, DELAY_RECOVER);
  // setTimeout(damageText, 4800);
