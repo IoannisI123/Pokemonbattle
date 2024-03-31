@@ -152,7 +152,7 @@ escapebtn.innerText = "Arceus";
 
 fightbtn.insertAdjacentHTML("beforebegin", `<img src = "Sprites/Palkia switch Icon.png" id="palkiaIcon"/>`);
 switchbtn.insertAdjacentHTML("beforebegin",`<img src = "Sprites/dialga switch icon.png" id="palkiaIcon"/>`);
-medicinebtn.insertAdjacentHTML("beforebegin",`<img src = "Sprites/giratina orgin Icon.png"" id="palkiaIcon"/>`);
+medicinebtn.insertAdjacentHTML("beforebegin",`<img src = "Sprites/giratina orgin Icon.png" id="palkiaIcon"/>`);
 medicinebtn.classList.add("medicineButtonSwitched");
 
 
