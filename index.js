@@ -23,6 +23,7 @@ let healthP2 = document.querySelector("#healthp2");
 let damageReceivedP1;
 let disableButtons = document.getElementsByClassName("buttons").disabled = true;
 
+
 //Sound effects Audio(Dom)
 
 const hitWeak = new Audio("https://static.wikia.nocookie.net/soundeffects/images/5/50/Hit_Weak_Not_Very_Effective.mp3");
@@ -62,7 +63,7 @@ const availablePokemon = {
    },
 
    "Arceus":{
-    "moves":["Outrage","shadowClaw","Earthquake", "Recover"],
+    "moves":["Outrage","Shadow Claw","Earthquake", "Recover"],
     "buttonText": ["Fight", "Switch", "Medicine", "Escape"]
    },
 };
@@ -70,15 +71,22 @@ const availablePokemon = {
 
 // Game state 
 let isFighting = false;
+let isSwitchingPokemon = false;
+let switchPokemonPressed = false;
 
 //Setting Fighting State
 
 fightbtn.onclick = function(){
 
-  if(!isFighting){
+  if(!isFighting && !isSwitchingPokemon){
    fight();
 
-} else{
+} else if(isSwitchingPokemon){
+  
+ switchToPalkia();
+
+} else {
+
   spacialRend();
 }
 }
@@ -87,20 +95,30 @@ fightbtn.onclick = function(){
 
 switchbtn.onclick = function(){
   
-  if(isFighting){
+  if(isFighting && !isSwitchingPokemon){
     dracoMeteor();
  
- }  else{
-   ( mytext.textContent = "Are you Switching Pokemon?");
+ }  else if (!isSwitchingPokemon){
+   
+  ( mytext.textContent = "Are you Switching Pokemon?");
+   return isSwitchingPokemon= true;
+
+ } else if(isSwitchingPokemon && !switchPokemonPressed) {
+
+    switchPokeomn();
+    return switchPokemonPressed = true;
+
+ } else if (isSwitchingPokemon && switchPokemonPressed){
+  switchToDialga();
+  
  }
  }
  
-
 
 // Update UI for fight mode
 
 function fight(){
- 
+   
 fightbtn.classList.add("fightButtonPressed");
 switchbtn.classList.add("switchButtonPressed");
 medicinebtn.classList.add("medicineButtonPressed");
@@ -113,6 +131,83 @@ escapebtn.innerText =availablePokemon.Palkia.moves[3]
 
 return isFighting=true;
 }
+
+
+// Update UI For Switch Pokemon Mode
+
+
+function switchPokeomn(){
+
+  mytext.textContent = `Palkia, come back!`;
+
+  fightbtn.classList.add("fightButtonSwitched");
+switchbtn.classList.add("switchButtonSwitched");
+medicinebtn.classList.add("medicineButtonSwitched");
+escapebtn.classList.add("escapeButtonSwitched");
+
+fightbtn.innerText = "Palkia";
+switchbtn.innerText = "Dialga";
+medicinebtn.innerText = "Giratina";
+escapebtn.innerText = "Arceus";
+
+fightbtn.insertAdjacentHTML("beforebegin", `<img src = "Sprites/Palkia switch Icon.png" id="palkiaIcon"/>`);
+switchbtn.insertAdjacentHTML("beforebegin",`<img src = "Sprites/dialga switch icon.png" id="palkiaIcon"/>`);
+medicinebtn.insertAdjacentHTML("beforebegin",`<img src = "Sprites/giratina orgin Icon.png"" id="palkiaIcon"/>`);
+medicinebtn.classList.add("medicineButtonSwitched");
+
+
+
+ }
+
+
+ // Switch to Different Pokemons 
+
+// Switch To Palkia
+ 
+function switchToPalkia(){
+
+  mytext.textContent = `Palkia, come out!`;
+
+
+}
+
+function switchToDialga(){
+
+  mytext.textContent = `Dialga, come out!`;
+
+
+}
+
+function switchToGiaratina(){
+
+  mytext.textContent = `Giratina, come out!`;
+
+
+}
+
+function switchToArceus(){
+
+  mytext.textContent = `Arceus, come out!`;
+
+
+}
+
+
+
+
+// Update UI to for Healing Pokemon
+
+medicinebtn.onclick = function(){
+  
+  if(isFighting && !isSwitchingPokemon){
+    hydroPump();
+     
+ } else if (isSwitchingPokemon)[
+  heal()
+ ]
+ }
+
+
 
   // Different attacks  of Player Pokemon 
 
@@ -151,7 +246,7 @@ function spacialRend(){
 
  escapebtn.onclick = function(){
   
-  if(isFighting){
+  if(isFighting && !isSwitchingPokemon){
     thunder();
  
  } else[
@@ -175,15 +270,7 @@ function spacialRend(){
  
  }
 
- medicinebtn.onclick = function(){
-  
-  if(isFighting){
-    hydroPump();
-     
- } else[
-  heal()
- ]
- }
+ 
  
  function hydroPump(){
   mytext.textContent = "Palkia Used " + availablePokemon.Palkia.moves[2];
@@ -205,14 +292,14 @@ function spacialRend(){
 
  function calculateDamage(){
   hitWeak.play();
-  healthP1.value -= Math.floor(Math.random() * (50 - 20) + 50);
+  healthP1.value -= Math.floor(Math.random() * (20 - 40) +40);
   healthBarP1.textContent = healthP1.value;
 }
 
    function calculateOpDamage(){
 
     hitWeak.play();
-    healthP2.value -= Math.floor(Math.random() * ( 50 - 20) + 50);
+    healthP2.value -= Math.floor(Math.random() * ( 20 - 40) + 40);
     healthBarP2.textContent = healthP2.value;
 
    }
@@ -220,7 +307,7 @@ function spacialRend(){
    function calculateSuperEffOpDamage(){
 
     hitStrong.play();
-    healthP2.value -= Math.floor(Math.random() * (10 - 40) + 40);
+    healthP2.value -= Math.floor(Math.random() * (20 - 50) + 50);
     healthBarP2.textContent = healthP2.value;
 
    }
@@ -268,7 +355,7 @@ function spacialRend(){
 
 // Enemy Pokemon random attack
 
-const opAttacks = ['outrage','outrage','shadow claw','shadow claw','earthquake','recover'];
+const opAttacks = ['outrage','outrage','shadow claw','shadow claw','earthquake','earthquake','recover'];
 
 let randomAttack;
 
@@ -278,7 +365,7 @@ function randomOpAttack(){
   if (randomAttack == 'outrage') {
     outrage();
    }
-   if (randomAttack == 'Shadow claw') {
+   if (randomAttack == 'shadow claw') {
     shadowClaw();
    }
    if (randomAttack == 'earthquake') {
@@ -331,6 +418,7 @@ function outrage(){
   setTimeout(resetTextAndButtons, DELAY_RESET_TEXT);
 
  }
+ 
 
  // Reset text and buttons to out Of Fight Mode
 

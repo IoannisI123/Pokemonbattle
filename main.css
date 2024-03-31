@@ -116,6 +116,18 @@ border-radius:10px;
 
  }
 
+ .fightButtonSwitched{
+   font-size:30px;
+   margin:10px;
+   border-radius: 15px;
+   padding: 10px;   
+   background-color:green;
+   border: none;
+   cursor:pointer;
+   color:#000000;
+ 
+}
+
  .switchButton{
     font-size:30px;
     margin:10px;
@@ -138,6 +150,17 @@ border-radius:10px;
    color:#ffffff;
  }
 
+ .switchButtonSwitched{
+   font-size:30px;
+   margin:10px;
+   border-radius: 15px;
+   padding: 10px;   
+   background-color:green;
+   border: none;
+   cursor:pointer;
+   color:#000000;
+ 
+}
  .switchButtonHidden{
    visibility:hidden;
  }
@@ -166,6 +189,18 @@ border-radius:10px;
    position:relative;
    left:0px;
    bottom:80px;
+}
+
+.medicineButtonSwitched{
+   font-size:30px;
+   margin:10px;
+   border-radius: 15px;
+   padding: 10px;   
+   background-color:green;
+   border: none;
+   cursor:pointer;
+   color:#000000;
+ 
 }
   
 .medicineButtonHidden{
@@ -208,6 +243,19 @@ border-radius:10px;
    visibility: hidden;
 }
 
+
+.escapeButtonSwitched{
+   font-size:30px;
+   margin:10px;
+   border-radius: 15px;
+   padding: 10px;   
+   background-color:green;
+   border: none;
+   cursor:pointer;
+   color:#000000;
+ 
+}
+
 #myAction{
     float: left;
     position: relative;
@@ -222,5 +270,10 @@ border-radius:10px;
     margin: auto;
     }
 
+
+    #palkiaIcon{
+      width: 40px;
+      height: auto;
+    }
     /*
 
