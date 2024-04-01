@@ -111,12 +111,7 @@ border-radius:10px;
    color:#ffffff;
  }
 
- .fightButtonHidden{
-   visibility: hidden;
-
- }
-
- .fightButtonSwitched{
+ .buttonSwitched{
    font-size:30px;
    margin:10px;
    border-radius: 15px;
@@ -125,7 +120,6 @@ border-radius:10px;
    border: none;
    cursor:pointer;
    color:#000000;
- 
 }
 
  .switchButton{
@@ -150,18 +144,7 @@ border-radius:10px;
    color:#ffffff;
  }
 
- .switchButtonSwitched{
-   font-size:30px;
-   margin:10px;
-   border-radius: 15px;
-   padding: 10px;   
-   background-color:green;
-   border: none;
-   cursor:pointer;
-   color:#000000;
- 
-}
- .switchButtonHidden{
+ .ButtonsHidden{
    visibility:hidden;
  }
 
@@ -191,17 +174,6 @@ border-radius:10px;
    bottom:80px;
 }
 
-.medicineButtonSwitched{
-   font-size:30px;
-   margin:10px;
-   border-radius: 15px;
-   padding: 10px;   
-   background-color:green;
-   border: none;
-   cursor:pointer;
-   color:#000000;
- 
-}
   
 .medicineButtonHidden{
    visibility: hidden;
@@ -239,22 +211,10 @@ border-radius:10px;
 
 }
 
-.escapeButtonHidden{
+.buttonHidden{
    visibility: hidden;
 }
 
-
-.escapeButtonSwitched{
-   font-size:30px;
-   margin:10px;
-   border-radius: 15px;
-   padding: 10px;   
-   background-color:green;
-   border: none;
-   cursor:pointer;
-   color:#000000;
- 
-}
 
 #myAction{
     float: left;
