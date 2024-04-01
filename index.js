@@ -40,12 +40,14 @@ const availablePokemon = {
   
   "Palkia":{
     "moves":["Spacial Rend","Draco Meteor","Hydro Pump", "Thunder"],
+    "palkiaAttacks":[spacialRend, dracoMeteor, hydroPump, thunder],
     "buttonText": ["Fight", "Switch", "Medicine", "Escape"],
      isFighting :true,
    },
   
    "Dialga":{
     "moves":["Flash Canon","Aura Sphere","Earth Power", "Dragon Pulse"],
+    //"dialgaAttacks":[flashCanon, auraSphere, earthPower, dragonPulse],
     "buttonText": ["Fight", "Switch", "Medicine", "Escape"],
     isFighting :false,
    },
