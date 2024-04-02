@@ -128,7 +128,7 @@ body {
    #enemyPokemon{
       width: 50px; 
       position: relative;
-      left:200px;
+      left: 500px;
    }
    #myPokemon {
        width: 50px; 
