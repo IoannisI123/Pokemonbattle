@@ -46,8 +46,8 @@ const availablePokemon = {
    },
   
    "Dialga":{
-    "moves":["Flash","Aura Sphere","", "Dragon Pulse"],
-    //"dialgaAttacks":[flashCanon, auraSphere, earthPower, dragonPulse],
+    "moves":["Flash Canon","Aura Sphere","Earth Power", "Dragon Pulse"],
+    "dialgaAttacks":[flashCanon, auraSphere, earthPower, dragonPulse],
     "buttonText": ["Fight", "Switch", "Medicine", "Escape"],
     isFighting :false,
    },
@@ -72,7 +72,7 @@ let CurrentPokemonMoves = [availablePokemon.Palkia.moves[0],availablePokemon.Pal
 
 let isPalkiaFighting = true;
 let isDialgaFighting = false;
-let isGiratinafighting = false;
+let isGiratinaFighting = false;
 let isArceusFighting = false;
 
 
@@ -103,18 +103,18 @@ function fightButtonsInit(){
 
     function buttonsSwitched() {
 
-      fightbtn.classList.add("buttonSwitched");
-   switchbtn.classList.add("buttonSwitched");
-   medicinebtn.classList.add("buttonSwitched");
-   escapebtn.classList.add("buttonSwitched");
+      fightbtn.classList.add("fightButtonSwitched");
+   switchbtn.classList.add("switchButtonSwitched");
+   medicinebtn.classList.add("medicineButtonSwitched");
+   escapebtn.classList.add("escapeButtonSwitched");
       }
 
 function resetFightButtons(){
   
-  fightbtn.classList.remove("fightButtonPressed", "buttonHidden","buttonSwitched");
-  switchbtn.classList.remove("switchButtonPressed" , "buttonHidden","buttonSwitched");
-  medicinebtn.classList.remove("medicineButtonPressed" , "buttonHidden", "buttonSwitched");
-  escapebtn.classList.remove("escapeButtonPressed", "buttonHidden", "buttonSwitched" );
+  fightbtn.classList.remove("fightButtonPressed", "buttonHidden","fightButtonSwitched");
+  switchbtn.classList.remove("switchButtonPressed" , "buttonHidden","switchButtonSwitched");
+  medicinebtn.classList.remove("medicineButtonPressed" , "buttonHidden", "medicineButtonSwitched");
+  escapebtn.classList.remove("escapeButtonPressed", "buttonHidden", "escapeButtonSwitched" );
 }
 
    function pokemonMovesInit(){ 
@@ -122,7 +122,7 @@ function resetFightButtons(){
     switch(true){
 
       case(isPalkiaFighting):
-    fightbtn.innerText = availablePokemon.Palkia.moves[0];
+    fightbtn.innerText =  availablePokemon.Palkia.moves[0];
 switchbtn.innerText = availablePokemon.Palkia.moves[1];
 medicinebtn.innerText = availablePokemon.Palkia.moves[2];
 escapebtn.innerText = availablePokemon.Palkia.moves[3];
@@ -135,7 +135,7 @@ medicinebtn.innerText = availablePokemon.Dialga.moves[2];
 escapebtn.innerText = availablePokemon.Dialga.moves[3];
 break;
 
-case(isGiratinafighting):
+case(isGiratinaFighting):
 fightbtn.innerText = availablePokemon.Giratina.moves[0];
 switchbtn.innerText = availablePokemon.Giratina.moves[1];
 medicinebtn.innerText = availablePokemon.Giratina.moves[2];
@@ -182,6 +182,23 @@ case(!isFighting && !isSwitchingPokemon && !switchPokemonPressed):
 fight();
 break;
 
+case (isFighting && !isSwitchingPokemon && !switchPokemonPressed && isPalkiaFighting):
+  
+spacialRend();
+  break;
+
+  case (isFighting && !isSwitchingPokemon && !switchPokemonPressed && isDialgaFighting):
+    flashCanon();
+    break;
+
+    case (isFighting && !isSwitchingPokemon && !switchPokemonPressed && isGiratinaFighting):
+      ShadowForce();
+      break;
+
+      case (isFighting && !isSwitchingPokemon && !switchPokemonPressed && isArceusFighting):
+        outrage();
+        break;
+
  case (isSwitchingPokemon && switchPokemonPressed && !isPalkiaFighting):
   
  switchToPalkia();
@@ -192,14 +209,6 @@ case (isSwitchingPokemon && switchPokemonPressed&& isPalkiaFighting):
   mytext.textContent = "You can't switch to that."
   break;
 
-case (isFighting && !isSwitchingPokemon && !switchPokemonPressed && isPalkiaFighting):
-  
-spacialRend();
-  break;
-
-  case (isFighting && !isSwitchingPokemon && !switchPokemonPressed && isDialgaFighting):
-    auraSphere();
-    break;
 }
   }
 
@@ -214,7 +223,15 @@ switchbtn.onclick = function(){
     break;
 
     case (isFighting && !isSwitchingPokemon && isDialgaFighting):
-    earthPower();
+    auraSphere();
+    break;
+
+    case (isFighting && !isSwitchingPokemon && isGiratinaFighting):
+    outrage();
+    break;
+
+    case (isFighting && !isSwitchingPokemon && isArceusFighting):
+    shadowClaw();
     break;
  
    case(!isSwitchingPokemon):
@@ -239,7 +256,7 @@ switchbtn.onclick = function(){
  }
  }
 
-// Update UI to for Healing Pokemon - Additionaly Switch and Attack
+// Perform Attacks - Heal And Switch Pokemon 
 
 medicinebtn.onclick = function(){
   
@@ -250,14 +267,24 @@ medicinebtn.onclick = function(){
     break;
      
     case(isFighting && !isSwitchingPokemon && isDialgaFighting):
-    dragonPulse();
+    earthPower();
      break;
 
-    case (isSwitchingPokemon && switchPokemonPressed && !isGiratinafighting):
+     case(isFighting && !isSwitchingPokemon && isGiratinaFighting):
+     shadowSneak();
+      break;
+
+      case(isFighting && !isSwitchingPokemon && isArceusFighting):
+      earthquake();
+       break;
+  
+ 
+
+    case (isSwitchingPokemon && switchPokemonPressed && !isGiratinaFighting):
         switchToGiaratina();
         break;
       
-      case(isSwitchingPokemon && switchPokemonPressed && isGiratinafighting):
+      case(isSwitchingPokemon && switchPokemonPressed && isGiratinaFighting):
       mytext.textContent = "You can't switch to that";
        break;
 
@@ -267,6 +294,53 @@ medicinebtn.onclick = function(){
    break;
     }
      }
+
+// Escae and last pokemon Attack 
+
+escapebtn.onclick = function(){
+  switch(true){
+  case(isFighting && !isSwitchingPokemon &isPalkiaFighting):
+    thunder();
+    break;
+
+ case(!isFighting && isSwitchingPokemon && switchPokemonPressed):
+  switchToArceus()
+  break;
+
+  case(isFighting && !isSwitchingPokemon && !switchPokemonPressed && isPalkiaFighting):
+  thunder();
+  break;
+
+  case(isFighting && !isSwitchingPokemon && !switchPokemonPressed && isDialgaFighting):
+  dragonPulse();
+  break;
+
+  case(isFighting && !isSwitchingPokemon && !switchPokemonPressed && isGiratinaFighting):
+  wiwisp();
+  break;
+
+  case(isFighting && !isSwitchingPokemon && !switchPokemonPressed && isArceusFighting):
+  recover();
+  break;
+  }
+}
+
+
+
+ 
+ function thunder(){
+  mytext.textContent = "Palkia Used " + availablePokemon.Palkia.moves[3];
+ 
+
+  setTimeout(attackText, DELAY_DRACO_METEOR);
+  setTimeout(calculateDamage, DELAY_THUNDER_DAMAGE);
+ // setTimeout(damageText, 4800);
+ setTimeout(randomOpAttack, DELAY_OPPONENT_ATTACK);
+
+    hideFightButtons();
+ }
+
+
 
 
  // Switch to Different Pokemons 
@@ -280,7 +354,7 @@ function switchToPalkia(){
    currentPokemon = "Palkia";
   isPalkiaFighting = true;
   isDialgaFighting = false;
-  isGiratinafighting = false;
+  isGiratinaFighting = false;
   isArceusFighting = false;
 
   /* isFighting = false;
@@ -299,7 +373,7 @@ function switchToDialga(){
    
    isDialgaFighting = true;
    isPalkiaFighting = false;
-  isGiratinafighting = false;
+  isGiratinaFighting = false;
   isArceusFighting = false;
     isSwitchingPokemon = false;
     switchPokemonPressed = false;
@@ -318,7 +392,7 @@ function switchToGiaratina(){
    currentPokemon="Giratina";
    isDialgaFighting = false;
    isPalkiaFighting = false;
-  isGiratinafighting = true;
+  isGiratinaFighting = true;
   isArceusFighting = false;
     isSwitchingPokemon = false;
     switchPokemonPressed = false;
@@ -335,7 +409,7 @@ function switchToArceus(){
   
    isDialgaFighting = false;
    isPalkiaFighting = false;
-  isGiratinafighting = false;
+  isGiratinaFighting = false;
   isArceusFighting = true;
     isSwitchingPokemon = false;
     switchPokemonPressed = false;
@@ -372,28 +446,7 @@ function spacialRend(){
   hideFightButtons();
  }
 
- escapebtn.onclick = function(){
-  
-  if(isFighting && !isSwitchingPokemon &isPalkiaFighting){
-    thunder();
  
- } else if(!isFighting && isSwitchingPokemon && switchPokemonPressed)[
-  switchToArceus()
- ]
- }
- 
- function thunder(){
-  mytext.textContent = "Palkia Used " + availablePokemon.Palkia.moves[3];
- 
-
-  setTimeout(attackText, DELAY_DRACO_METEOR);
-  setTimeout(calculateDamage, DELAY_THUNDER_DAMAGE);
- // setTimeout(damageText, 4800);
- setTimeout(randomOpAttack, DELAY_OPPONENT_ATTACK);
-
-    hideFightButtons();
- }
-
  
  
  function hydroPump(){
@@ -622,7 +675,7 @@ function outrage(){
   escapebtn.innerText = availablePokemon.Dialga.buttonText[3];
   break;
 
-  case(isGiratinafighting):
+  case(isGiratinaFighting):
 
   fightbtn.innerText = availablePokemon.Giratina.buttonText[0];
   switchbtn.innerText = availablePokemon.Giratina.buttonText[1];

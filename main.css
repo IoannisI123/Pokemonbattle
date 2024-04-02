@@ -1,237 +1,144 @@
-body{
-   background-color:#dbdbdb;
-   
+
+body {
+   background-color: #dbdbdb;
 }
 
-#mainTitle{
-    text-align:center;
+#mainTitle {
+   text-align: center;
 }
 
-#enemyPokemon{
-position: relative;
-left: 600px;
-top: 100px;
+#enemyPokemon {
+   position: relative;
+   left: 800px;
+   width: 200px;
+   margin-top: 20px;
+   float: left;
 }
 
-img{
-    height:250px;
-    
+#myPokemon {
+   position: relative;
+   left: 300px;
+   width: 200px; 
+   margin-top: 20px;
+   float: left;
 }
-
-#p1Stats
-
 
 #pokemonName1{
-   position: relative;
-   float:left;
-   left: 290px;
-   bottom:150px;
-   color:white;
-   font-size:1.5em;
+
+   color: #ffffff;
 }
 
 #pokemonName2{
-   position: relative;
-   float:left;
-   left: 360px;
-   bottom:150px;
-   color:black;
-   font-size:1.5em;
-}
 
-
-
-#healthp1{
-    position: relative;
-    float:left;
-    left: 360px;
-    bottom:120px;
+   color: #ffffff;
 }
 
 #hpP1{
-   position: relative;
-   float:left;
-   left: 520px;
-   bottom:130px;
-   color:white;
+   color: white;
 }
-
-#healthp2{
-    position: relative;
-    float:left;
-    left: 520px;
-    bottom:130px;
-   
-}
-
 
 #hpP2{
+   color: white;
+}
+
+#p1Stats{
    position: relative;
-   float:left;
-   left: 580px;
-   bottom:130px;
-   color: black;
+   left:400px;
 }
 
-#container{
-width:50%;
-margin: auto;
-background-image: url(background/battle-background1.jpg);
-background-size: cover;
-border-radius:10px;
- box-shadow: 5px 5px 15px hsl(0, 0%, 0%, 0.3);
- text-align: left;
- }
-
- #myAction{
-   margin-left: 2px;
- }
 
 
- .fightButton{
-    font-size:30px;
-    margin:10px;
-    border-radius: 15px;
-    padding: 10px;   
-    background-color:hsla(0, 5%, 88%, 0.6);
-    border:2px solid red;
-    cursor:pointer;
-    color:#000000;
- }
- 
+#container {
+   width: 80%;
+   margin: auto;
+   background-image: url(background/battle-background1.jpg);
+   background-size: cover;
+   border-radius: 10px;
+   box-shadow: 5px 5px 15px hsl(0, 0%, 0%, 0.3);
+   text-align: left;
+   overflow: hidden; /* Ensures the container wraps around floated elements */
+}
 
-.fightButtonPressed{
-   font-size:30px;
-   margin:10px;
+#controlContainer {
+   text-align: center;
+   font-size: 30px;
+   border: 5px solid black;
+   width: 80%;
+   margin: auto;
+}
+
+/* Responsive adjustment*/
+@media only screen and (max-width: 768px) {
+   #enemyPokemon,
+   #myPokemon {
+       width: 150px; 
+   }
+}
+
+@media only screen and (max-width: 576px) {
+   #enemyPokemon,
+   #myPokemon {
+       width: 100px; /*  adjusted width for even smaller screens */
+   }
+
+   #container,
+   #controlContainer {
+       width: 95%;
+   }
+
+   .fightButton,
+   .switchButton,
+   .medicineButton,
+   .escapeButton {
+       display: block;
+   }
+
+}
+
+/* Button styles */
+.fightButton,
+.switchButton,
+.medicineButton,
+.escapeButton {
+   font-size: 30px;
+   margin: 10px;
    border-radius: 15px;
-   padding: 10px;   
+   padding: 10px;
+   background-color: hsla(0, 5%, 88%, 0.6);
+   border: 2px solid red;
+   cursor: pointer;
+   color: #000000;
+}
+
+.fightButtonPressed,
+.switchButtonPressed,
+.medicineButtonPressed,
+.escapeButtonPressed {
+   font-size: 20px;
+   margin: 5px;
+   border-radius: 15px;
+   padding: 5px;
    background-color: #83116e99;
-   border:2px solid red;
-   cursor:pointer;
-   color:#ffffff;
- }
+   border: 2px solid red;
+   cursor: pointer;
+   color: #ffffff;
+}
 
- .buttonSwitched{
-   font-size:30px;
-   margin:10px;
+.fightButtonSwitched,
+.switchButtonSwitched,
+.medicineButtonSwitched,
+.escapeButtonSwitched {
+   font-size: 20px;
+   margin: 5px;
    border-radius: 15px;
-   padding: 10px;   
+   padding: 5px;
    background-color:green;
-   cursor:pointer;
-   color:#000000;
+   border: 2px solid green;
+   cursor: pointer;
+   color: #ffffff;
 }
 
- .switchButton{
-    font-size:30px;
-    margin:10px;
-    border-radius: 15px;
-    padding: 10px;   
-    background-color:hsla(0, 5%, 88%, 0.6);
-    border:2px solid green;
-    cursor:pointer;
-    color:#000000;
- }
-
- .switchButtonPressed{
-   font-size:30px;
-   margin:10px;
-   border-radius: 15px;
-   padding: 10px;   
-   background-color:#83116e99;
-   border:2px solid red;
-   cursor:pointer;
-   color:#ffffff;
- }
-
- .ButtonsHidden{
-   visibility:hidden;
- }
-
- .medicineButton{
-    font-size:30px;
-    margin:10px;
-    border-radius: 15px;
-    padding: 10px;   
-    background-color:hsla(0, 5%, 88%, 0.6);
-    border:2px solid yellow;
-    cursor:pointer;
-    color:#000000;
-
- }
-
-.medicineButtonPressed{
-   font-size:30px;
-   margin:10px;
-   border-radius: 15px;
-   padding: 10px;   
-   background-color:rgb(43, 114, 228);
-   border:2px solid blue;
-   cursor:pointer;
-   color:#ffffff;
-   position:relative;
-   left:0px;
-   bottom:80px;
-}
-
-  
-.medicineButtonHidden{
+.buttonHidden {
    visibility: hidden;
 }
-
- .escapeButton{
-    font-size:30px;
-    margin:10px;
-    border-radius: 15px;
-    padding: 10px;   
-    background-color:hsla(0, 5%, 88%, 0.6);
-    border:2px solid blue ;
-    cursor:pointer;
-    color:#000000;
-  
- }
-
- .escapeButtonPressed{
-   font-size:30px;
-   margin:10px;
-   border-radius: 15px;
-   padding: 10px;   
-   background-color:rgb(226, 226, 17);
-   border:2px solid yellow;
-   cursor:pointer;
-   color:#ffffff;
-   position:relative;
-   right:210px;
-   bottom:160px;
-}
-
-.escapeButtonPressed:hover{
-
-   background-color:rgb(226, 226, 17);
-
-}
-
-.buttonHidden{
-   visibility: hidden;
-}
-
-
-#myAction{
-    float: left;
-    position: relative;
-    right:200px;
-}
-
- #controlContainer{
-    text-align: right;
-    font-size:30px;
-    border: 5px solid black;
-    width:50%;
-    margin: auto;
-    }
-
-    
-    .myPokemonImg{
-      visibility: hidden;
-    }
-    /*
 
