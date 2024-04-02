@@ -125,9 +125,46 @@ body {
 }
 
 @media only screen and (max-width: 576px) {
-   #enemyPokemon,
+   #enemyPokemon{
+      width: 50px; 
+      position: relative;
+      left:200px;
+   }
    #myPokemon {
-       width: 50px; /*  adjusted width for even smaller screens */
+       width: 50px; 
+       /*  adjusted width for even smaller screens */
+
+      
+      #pokemonName1{
+      
+         color: #000000;
+      }
+      
+      #pokemonName2{
+      
+         color: #000000;
+      }
+      
+      #hpP1{
+         color: #000000;
+      }
+      
+      #hpP2{
+         color: #000000;
+      }
+      
+      #p1Stats{
+         position: relative;
+         left:50px;
+         font-size: 20px;
+      }
+      
+      #p2Stats{
+         position: relative;
+         left:50px;
+         font-size: 20px;
+      }
+
 
    }
 
