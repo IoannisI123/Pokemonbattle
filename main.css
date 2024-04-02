@@ -71,14 +71,64 @@ body {
 @media only screen and (max-width: 768px) {
    #enemyPokemon,
    #myPokemon {
-       width: 150px; 
+       width: 200px; 
    }
+
+   #enemyPokemon {
+      position: relative;
+      left: 300px;
+      width: 200px;
+      margin-top: 20px;
+      float: left;
+   }
+   
+   #myPokemon {
+      position: relative;
+      left: 200px;
+      width: 150px; 
+      margin-top: 20px;
+      float: left;
+   }
+   
+   #pokemonName1{
+   
+      color: #ffffff;
+   }
+   
+   #pokemonName2{
+   
+      color: #ffffff;
+   }
+   
+   #hpP1{
+      color: white;
+   }
+   
+   #hpP2{
+      color: white;
+   }
+   
+   #p1Stats{
+      position: relative;
+      left:50px;
+      font-size: 20px;
+   }
+   
+   #p2Stats{
+      position: relative;
+      left:50px;
+      font-size: 20px;
+   }
+
+
+
 }
 
 @media only screen and (max-width: 576px) {
    #enemyPokemon,
    #myPokemon {
-       width: 100px; /*  adjusted width for even smaller screens */
+       width: 50px; /*  adjusted width for even smaller screens */
+
    }
 
    #container,
