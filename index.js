@@ -40,14 +40,12 @@ const availablePokemon = {
   
   "Palkia":{
     "moves":["Spacial Rend","Draco Meteor","Hydro Pump", "Thunder"],
-    "palkiaAttacks":[spacialRend, dracoMeteor, hydroPump, thunder],
     "buttonText": ["Fight", "Switch", "Medicine", "Escape"],
      isFighting :true,
    },
   
    "Dialga":{
     "moves":["Flash Canon","Aura Sphere","Earth Power", "Dragon Pulse"],
-    "dialgaAttacks":[flashCanon, auraSphere, earthPower, dragonPulse],
     "buttonText": ["Fight", "Switch", "Medicine", "Escape"],
     isFighting :false,
    },
@@ -65,10 +63,21 @@ const availablePokemon = {
    },
 };
 
+const availableAttacks = {
+  
+  
+    "moves":["Spacial Rend","Draco Meteor","Hydro Pump", "Thunder",
+           "Flash Canon","Aura Sphere","Earth Power", "Dragon Pulse",
+           "Shadow Force","Outrage","Shadow Sneak", "Wi-o-Wisp",
+           "Shadow Claw","Earthquake", "Recover"]
+    
+
+}
 
 // Game state 
 
 let CurrentPokemonMoves = [availablePokemon.Palkia.moves[0],availablePokemon.Palkia.moves[1],availablePokemon.Palkia.moves[2],availablePokemon.Palkia.moves[3]];
+
 
 let isPalkiaFighting = true;
 let isDialgaFighting = false;
@@ -151,8 +160,6 @@ break;
 }
    }
   
- 
-
   function switchPokemonButtonName(){
 fightbtn.innerText = "Palkia";
 switchbtn.innerText = "Dialga";
@@ -184,19 +191,19 @@ break;
 
 case (isFighting && !isSwitchingPokemon && !switchPokemonPressed && isPalkiaFighting):
   
-spacialRend();
+useAttack("Spacial Rend");
   break;
 
   case (isFighting && !isSwitchingPokemon && !switchPokemonPressed && isDialgaFighting):
-    flashCanon();
+    useAttack("FlashCanon");
     break;
 
     case (isFighting && !isSwitchingPokemon && !switchPokemonPressed && isGiratinaFighting):
-      ShadowForce();
+      useAttack("Shadow Force");
       break;
 
       case (isFighting && !isSwitchingPokemon && !switchPokemonPressed && isArceusFighting):
-        outrage();
+        useAttack("Outrage");
         break;
 
  case (isSwitchingPokemon && switchPokemonPressed && !isPalkiaFighting):
@@ -219,19 +226,19 @@ switchbtn.onclick = function(){
   switch(true) {
   
   case (isFighting && !isSwitchingPokemon && isPalkiaFighting):
-    dracoMeteor();
+    useAttack("Draco Meteor");
     break;
 
     case (isFighting && !isSwitchingPokemon && isDialgaFighting):
-    auraSphere();
+    useAttack("auraSphere");
     break;
 
     case (isFighting && !isSwitchingPokemon && isGiratinaFighting):
-    outrage();
+    useAttack("outrage");
     break;
 
     case (isFighting && !isSwitchingPokemon && isArceusFighting):
-    shadowClaw();
+    useAttack("Shadow Claw");
     break;
  
    case(!isSwitchingPokemon):
@@ -263,19 +270,19 @@ medicinebtn.onclick = function(){
    switch(true){
 
   case(isFighting && !isSwitchingPokemon && isPalkiaFighting):
-    hydroPump();
+    useAttack("Hydro Pump");
     break;
      
     case(isFighting && !isSwitchingPokemon && isDialgaFighting):
-    earthPower();
+    useAttack("Earth Power");
      break;
 
      case(isFighting && !isSwitchingPokemon && isGiratinaFighting):
-     shadowSneak();
+     useAttack("Shadow Sneak");
       break;
 
       case(isFighting && !isSwitchingPokemon && isArceusFighting):
-      earthquake();
+      useAttack("Earthquake");
        break;
   
  
@@ -300,7 +307,7 @@ medicinebtn.onclick = function(){
 escapebtn.onclick = function(){
   switch(true){
   case(isFighting && !isSwitchingPokemon &isPalkiaFighting):
-    thunder();
+    useAttack("Thunder");
     break;
 
  case(!isFighting && isSwitchingPokemon && switchPokemonPressed):
@@ -308,19 +315,19 @@ escapebtn.onclick = function(){
   break;
 
   case(isFighting && !isSwitchingPokemon && !switchPokemonPressed && isPalkiaFighting):
-  thunder();
+  useAttack("Thunder");
   break;
 
   case(isFighting && !isSwitchingPokemon && !switchPokemonPressed && isDialgaFighting):
-  dragonPulse();
+  useAttack("Dragon Pulse");
   break;
 
   case(isFighting && !isSwitchingPokemon && !switchPokemonPressed && isGiratinaFighting):
-  wiwisp();
+  useAttack("Thunder");
   break;
 
   case(isFighting && !isSwitchingPokemon && !switchPokemonPressed && isArceusFighting):
-  recover();
+  useAttack("Recover");
   break;
   }
 }
@@ -404,115 +411,55 @@ function switchToArceus(){
 
   // Different attacks  of Player Default Pokemon 
 
-function spacialRend(){
-   isFighting = false;
-  mytext.textContent = "Palkia Used " + availablePokemon.Palkia.moves[0];
 
-  setTimeout(attackText, DELAY_SPECIAL_REND);
-  setTimeout(calculateDamage, DELAY_TAKE_DAMAGE);
- // setTimeout(damageText, 4800);
-  setTimeout(randomOpAttack, DELAY_OPPONENT_ATTACK);
-
-  hideFightButtons();
- 
- }
-
- 
- function dracoMeteor(){
-  mytext.textContent = "Palkia Used " + availablePokemon.Palkia.moves[1];
-
-
-  setTimeout(attackText, DELAY_DRACO_METEOR);
-  setTimeout(calculateDamage, DELAY_TAKE_DAMAGE);
- // setTimeout(damageText, 4800);
- setTimeout(randomOpAttack, DELAY_OPPONENT_ATTACK);
-
-  hideFightButtons();
- }
-
- 
- function hydroPump(){
-  mytext.textContent = "Palkia Used " + availablePokemon.Palkia.moves[2];
- 
-
-  setTimeout(attackText, DELAY_DRACO_METEOR);
-  setTimeout(calculateDamage, DELAY_THUNDER_DAMAGE);
- // setTimeout(damageText, 4800);
-  setTimeout(randomOpAttack, DELAY_OPPONENT_ATTACK);
-
- hideFightButtons();
- }
-
- function thunder(){
-  mytext.textContent = "Palkia Used " + availablePokemon.Palkia.moves[3];
- 
-
-  setTimeout(attackText, DELAY_DRACO_METEOR);
-  setTimeout(calculateDamage, DELAY_THUNDER_DAMAGE);
- // setTimeout(damageText, 4800);
- setTimeout(randomOpAttack, DELAY_OPPONENT_ATTACK);
-
+  function useAttack(moveName) {
+    const pokemonName = currentPokemon; // Set your desired Pokémon here
+    const pokemon = pokemonName;
+    if (!pokemon) {
+      console.error("Pokemon not found");
+      return;
+    }
+  
+    const move = availableAttacks.moves.find(move => move === moveName);
+    if (!move) {
+      console.error("Move not found");
+      return;
+    }
+    
+    mytext.textContent = `${currentPokemon} Used ${moveName}`;
+    
+    let delay;
+    switch(moveName) {
+      case "Spacial Rend":
+        delay = DELAY_SPECIAL_REND;
+        delay = DELAY_TAKE_DAMAGE;
+        delay = DELAY_OPPONENT_ATTACK;
+        break;
+      case "Draco Meteor":
+        delay = DELAY_DRACO_METEOR;
+        delay = DELAY_TAKE_DAMAGE;
+        delay = DELAY_OPPONENT_ATTACK;
+        break;
+      case "Hydro Pump":
+        delay = DELAY_SPACIAL_REND;
+        delay = DELAY_TAKE_DAMAGE;
+        delay = DELAY_OPPONENT_ATTACK;
+        break;
+      case "Thunder":
+        delay = DELAY_SPECIAL_REND;
+        delay = DELAY_TAKE_DAMAGE;
+        delay = DELAY_OPPONENT_ATTACK;
+        break;
+      default:
+        console.error("Invalid move");
+        return;
+    }
+    
+    //setTimeout(attackText, delay);
+    setTimeout(calculateDamage, DELAY_TAKE_DAMAGE);
+    setTimeout(randomOpAttack, DELAY_OPPONENT_ATTACK);
     hideFightButtons();
- }
-
-
-
-
-  // Attacks of Different Pokemon 
-  // Dialga Attacks
-
-  function flashCanon(){
-    isFighting = false;
-   mytext.textContent = "Dialga Used " + availablePokemon.Dialga.moves[0];
- 
-   setTimeout(attackText, DELAY_SPECIAL_REND);
-   setTimeout(calculateDamage, DELAY_TAKE_DAMAGE);
-  // setTimeout(damageText, 4800);
-   setTimeout(randomOpAttack, DELAY_OPPONENT_ATTACK);
- 
-   hideFightButtons();
-  
   }
-
-  function earthPower(){
-    isFighting = false;
-   mytext.textContent = "Dialga Used " + availablePokemon.Dialga.moves[2];
- 
-   setTimeout(attackText, DELAY_SPECIAL_REND);
-   setTimeout(calculateDamage, DELAY_TAKE_DAMAGE);
-  // setTimeout(damageText, 4800);
-   setTimeout(randomOpAttack, DELAY_OPPONENT_ATTACK);
- 
-   hideFightButtons();
-  
-  }
-
-  function auraSphere(){
-    isFighting = false;
-   mytext.textContent = "Dialga Used " + availablePokemon.Dialga.moves[1];
- 
-   setTimeout(attackText, DELAY_SPECIAL_REND);
-   setTimeout(calculateDamage, DELAY_TAKE_DAMAGE);
-  // setTimeout(damageText, 4800);
-   setTimeout(randomOpAttack, DELAY_OPPONENT_ATTACK);
- 
-   hideFightButtons();
-  
-  }
-
-  function dragonPulse(){
-    isFighting = false;
-   mytext.textContent = "Dialga Used " + availablePokemon.Dialga.moves[3];
- 
-   setTimeout(attackText, DELAY_SPECIAL_REND);
-   setTimeout(calculateDamage, DELAY_TAKE_DAMAGE);
-  // setTimeout(damageText, 4800);
-   setTimeout(randomOpAttack, DELAY_OPPONENT_ATTACK);
- 
-   hideFightButtons();
-   
-  }
-
 
 
  // Perform Damage Calculation And Display it 
