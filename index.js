@@ -327,22 +327,6 @@ escapebtn.onclick = function(){
 
 
 
- 
- function thunder(){
-  mytext.textContent = "Palkia Used " + availablePokemon.Palkia.moves[3];
- 
-
-  setTimeout(attackText, DELAY_DRACO_METEOR);
-  setTimeout(calculateDamage, DELAY_THUNDER_DAMAGE);
- // setTimeout(damageText, 4800);
- setTimeout(randomOpAttack, DELAY_OPPONENT_ATTACK);
-
-    hideFightButtons();
- }
-
-
-
-
  // Switch to Different Pokemons 
  
 function switchToPalkia(){
@@ -447,8 +431,6 @@ function spacialRend(){
  }
 
  
- 
- 
  function hydroPump(){
   mytext.textContent = "Palkia Used " + availablePokemon.Palkia.moves[2];
  
@@ -460,6 +442,21 @@ function spacialRend(){
 
  hideFightButtons();
  }
+
+ function thunder(){
+  mytext.textContent = "Palkia Used " + availablePokemon.Palkia.moves[3];
+ 
+
+  setTimeout(attackText, DELAY_DRACO_METEOR);
+  setTimeout(calculateDamage, DELAY_THUNDER_DAMAGE);
+ // setTimeout(damageText, 4800);
+ setTimeout(randomOpAttack, DELAY_OPPONENT_ATTACK);
+
+    hideFightButtons();
+ }
+
+
+
 
   // Attacks of Different Pokemon 
   // Dialga Attacks
