@@ -1,4 +1,5 @@
 
+/* Original styles */
 body {
    background-color: #dbdbdb;
 }
@@ -18,35 +19,31 @@ body {
 #myPokemon {
    position: relative;
    left: 300px;
-   width: 200px; 
+   width: 200px;
    margin-top: 20px;
    float: left;
 }
 
-#pokemonName1{
-
+#pokemonName1 {
    color: #ffffff;
 }
 
-#pokemonName2{
-
+#pokemonName2 {
    color: #ffffff;
 }
 
-#hpP1{
+#hpP1 {
    color: white;
 }
 
-#hpP2{
+#hpP2 {
    color: white;
 }
 
-#p1Stats{
+#p1Stats {
    position: relative;
-   left:400px;
+   left: 400px;
 }
-
-
 
 #container {
    width: 80%;
@@ -56,7 +53,7 @@ body {
    border-radius: 10px;
    box-shadow: 5px 5px 15px hsl(0, 0%, 0%, 0.3);
    text-align: left;
-   overflow: hidden; /* Ensures the container wraps around floated elements */
+   overflow: hidden;
 }
 
 #controlContainer {
@@ -67,179 +64,84 @@ body {
    margin: auto;
 }
 
-/* Responsive adjustment*/
-@media only screen and (max-width: 768px) {
+/* Responsive adjustments */
+@media only screen and (max-width: 1200px) {
    #enemyPokemon {
-      position: relative;
-      left: 100px;
-      width: 100px;
+       position: relative;
+       left: 400px;
+       width: 150px;
    }
-   
+
    #myPokemon {
-      position: relative;
-      left: 100px;
-      width: 100px; 
-      
-   }
-   
-   #pokemonName1{
-   
-      color: #ffffff;
-      font-size: 20px;
-   }
-   
-   #pokemonName2{
-   
-      color: #ffffff;
-      font-size: 20px;
+       position: relative;
+       left: 200px;
+       width: 150px;
    }
 
-   #healthp1{
-      width:100px;
+   #p1Stats {
+       left: 250px;
+   }
+}
+
+@media only screen and (max-width: 992px) {
+   #enemyPokemon {
+       left: 100px;
+       width: 120px;
    }
 
-   #healthp2{
-      width:100px;
-   }
-   
-   #hpP1{
-      color: white;
-      font-size: 20px;
-   }
-   
-   #hpP2{
-      color: white;
-      font-size: 20px;;
-   }
-   
-   #p1Stats{
-      position: relative;
-      left:100px;
-      font-size: 20px;
-   }
-   
-   #p2Stats{
-      position: relative;
-      left:-100px;
-      font-size: 30px;
+   #myPokemon {
+       left: 50px;
+       width: 120px;
    }
 
-   @media only screen and (max-width: 700px) {
-      #enemyPokemon{
-         width: 100px; 
-         position: relative;
-         left: 200px;
-      }
-      #myPokemon {
-          width: 100px; 
-          position: relative;
-         left: 200px;
-          /*  adjusted width for even smaller screens */
-   
-         
-         #pokemonName1{
-         
-            color: #000000;
-            font-size: 10px;
-         }
-         
-         #pokemonName2{
-         
-            color: #000000;
-            font-size: 10px;
-         }
-         
-         #healthp1{
-            width:100px;
-         }
-      
-         #healthp2{
-            width:100px;
-         }
-   
-         #hpP1{
-            width: fit-content;
-            color: #000000;
-         }
-         
-         #hpP2{
-            width: fit-content;
-            color: #000000;
-         }
-         
-         #p1Stats{
-            position: relative;
-            left:200px;
-            font-size: 5px;
-         }
-         
-         #p2Stats{
-            position: relative;
-            left:50px;
-            font-size: 10px;
-         }
-   
-   
-      }
+   #p1Stats {
+       left: 100px;
+   }
+}
 
+@media only screen and (max-width: 768px) {
+   #enemyPokemon,
+   #myPokemon {
+       left: 50px;
+       width: 100px;
+   }
+
+   #p1Stats {
+       left: 50px;
+       font-size: 20px;
+   }
 }
 
 @media only screen and (max-width: 576px) {
-   #enemyPokemon{
-      width: 100px; 
-      position: relative;
-      left: 200px;
-   }
+   #enemyPokemon,
    #myPokemon {
-       width: 100px; 
-       position: relative;
-      left: 200px;
-       /*  adjusted width for even smaller screens */
+       left: 20px;
+       width: 80px;
+   }
 
-      
-      #pokemonName1{
-      
-         color: #000000;
-         font-size: 10px;
-      }
-      
-      #pokemonName2{
-      
-         color: #000000;
-         font-size: 10px;
-      }
-      
-      #healthp1{
-         width:100px;
-      }
-   
-      #healthp2{
-         width:100px;
-      }
+   #pokemonName1,
+   #pokemonName2 {
+       font-size: 14px;
+   }
 
-      #hpP1{
-         width: fit-content;
-         color: #000000;
-      }
-      
-      #hpP2{
-         width: fit-content;
-         color: #000000;
-      }
-      
-      #p1Stats{
-         position: relative;
-         left:200px;
-         font-size: 5px;
-      }
-      
-      #p2Stats{
-         position: relative;
-         left:50px;
-         font-size: 10px;
-      }
+   #hpP1,
+   #hpP2 {
+       font-size: 16px;
+   }
 
+   #healthp1,
+   #healthp2 {
+       width: 80px;
+   }
 
+   #p1Stats {
+       left: 20px;
+       font-size: 16px;
+   }
+
+   #p2Stats {
+       left: 10px;
+       font-size: 18px;
    }
 
    #container,
@@ -253,8 +155,8 @@ body {
    .escapeButton {
        display: block;
    }
-
 }
+
 
 /* Button styles */
 .fightButton,
