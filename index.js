@@ -68,7 +68,7 @@ const availableAttacks = {
   
     "moves":["Spacial Rend","Draco Meteor","Hydro Pump", "Thunder",
            "Flash Canon","Aura Sphere","Earth Power", "Dragon Pulse",
-           "Shadow Force","Outrage","Shadow Sneak", "Wi-o-Wisp",
+           "Shadow Force","Outrage","Shadow Sneak", "Will-O-Wisp",
            "Shadow Claw","Earthquake", "Recover"]
     
 
@@ -195,7 +195,7 @@ useAttack("Spacial Rend");
   break;
 
   case (isFighting && !isSwitchingPokemon && !switchPokemonPressed && isDialgaFighting):
-    useAttack("FlashCanon");
+    useAttack("Flash Canon");
     break;
 
     case (isFighting && !isSwitchingPokemon && !switchPokemonPressed && isGiratinaFighting):
@@ -230,11 +230,11 @@ switchbtn.onclick = function(){
     break;
 
     case (isFighting && !isSwitchingPokemon && isDialgaFighting):
-    useAttack("auraSphere");
+    useAttack("Aura Sphere");
     break;
 
     case (isFighting && !isSwitchingPokemon && isGiratinaFighting):
-    useAttack("outrage");
+    useAttack("Outrage");
     break;
 
     case (isFighting && !isSwitchingPokemon && isArceusFighting):
@@ -306,9 +306,7 @@ medicinebtn.onclick = function(){
 
 escapebtn.onclick = function(){
   switch(true){
-  case(isFighting && !isSwitchingPokemon &isPalkiaFighting):
-    useAttack("Thunder");
-    break;
+  
 
  case(!isFighting && isSwitchingPokemon && switchPokemonPressed):
   switchToArceus()
@@ -323,7 +321,7 @@ escapebtn.onclick = function(){
   break;
 
   case(isFighting && !isSwitchingPokemon && !switchPokemonPressed && isGiratinaFighting):
-  useAttack("Thunder");
+  useAttack("Will-O-Wisp");
   break;
 
   case(isFighting && !isSwitchingPokemon && !switchPokemonPressed && isArceusFighting):
@@ -435,21 +433,94 @@ function switchToArceus(){
         delay = DELAY_TAKE_DAMAGE;
         delay = DELAY_OPPONENT_ATTACK;
         break;
-      case "Draco Meteor":
+      
+        case "Draco Meteor":
         delay = DELAY_DRACO_METEOR;
         delay = DELAY_TAKE_DAMAGE;
         delay = DELAY_OPPONENT_ATTACK;
         break;
-      case "Hydro Pump":
+      
+        case "Hydro Pump":
         delay = DELAY_SPACIAL_REND;
         delay = DELAY_TAKE_DAMAGE;
         delay = DELAY_OPPONENT_ATTACK;
         break;
-      case "Thunder":
+      
+        case "Thunder":
         delay = DELAY_SPECIAL_REND;
         delay = DELAY_TAKE_DAMAGE;
         delay = DELAY_OPPONENT_ATTACK;
         break;
+        
+        case "Flash Canon":
+        delay = DELAY_SPECIAL_REND;
+        delay = DELAY_TAKE_DAMAGE;
+        delay = DELAY_OPPONENT_ATTACK;
+        break;
+       
+        case "Aura Sphere":
+        delay = DELAY_SPECIAL_REND;
+        delay = DELAY_TAKE_DAMAGE;
+        delay = DELAY_OPPONENT_ATTACK;
+        break;
+       
+        case "Dragon Pulse":
+        delay = DELAY_SPECIAL_REND;
+        delay = DELAY_TAKE_DAMAGE;
+        delay = DELAY_OPPONENT_ATTACK;
+        break;
+       
+        case "Earth Power":
+        delay = DELAY_SPECIAL_REND;
+        delay = DELAY_TAKE_DAMAGE;
+        delay = DELAY_OPPONENT_ATTACK;
+        break;
+
+        case "Shadow Force":
+          delay = DELAY_SPECIAL_REND;
+          delay = DELAY_TAKE_DAMAGE;
+          delay = DELAY_OPPONENT_ATTACK;
+          break;
+
+          case "Shadow Sneak":
+        delay = DELAY_SPECIAL_REND;
+        delay = DELAY_TAKE_DAMAGE;
+        delay = DELAY_OPPONENT_ATTACK;
+        break;
+
+        case "Will-O-Wisp":
+        delay = DELAY_SPECIAL_REND;
+        delay = DELAY_TAKE_DAMAGE;
+        delay = DELAY_OPPONENT_ATTACK;
+        break;
+
+        case "Shadow Claw":
+          delay = DELAY_SPECIAL_REND;
+          delay = DELAY_TAKE_DAMAGE;
+          delay = DELAY_OPPONENT_ATTACK;
+          break;
+
+          case "Outrage":
+            delay = DELAY_SPECIAL_REND;
+            delay = DELAY_TAKE_DAMAGE
+            delay = DELAY_OPPONENT_ATTACK;
+            break;
+
+            case "Earthquake":
+              delay = DELAY_SPECIAL_REND;
+              delay = DELAY_TAKE_DAMAGE;
+              delay = DELAY_OPPONENT_ATTACK;
+              break;
+
+              case "Recover":
+                delay = DELAY_SPECIAL_REND;
+                delay = DELAY_RECOVER;
+                delay = DELAY_RECOVERY_TEXT;
+                delay = DELAY_OPPONENT_ATTACK;
+                break;
+
+
+
       default:
         console.error("Invalid move");
         return;
