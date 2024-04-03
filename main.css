@@ -84,50 +84,34 @@ body {
 }
 
 @media only screen and (max-width: 992px) {
-   #enemyPokemon {
-       left: 100px;
-       width: 120px;
-   }
-
+   #enemyPokemon{
+      position: relative;
+      left: 400px;
+      width: 100px;
+  }
    #myPokemon {
-       left: 50px;
-       width: 120px;
-   }
-
-   #p1Stats {
-       left: 100px;
-   }
-}
-
-@media only screen and (max-width: 768px) {
-   #enemyPokemon,
-   #myPokemon {
-       left: 50px;
+       left: -5px;
        width: 100px;
-   }
-
-   #p1Stats {
-       left: 50px;
-       font-size: 20px;
-   }
-}
-
-@media only screen and (max-width: 576px) {
-   #enemyPokemon,
-   #myPokemon {
-       left: 20px;
-       width: 80px;
    }
 
    #pokemonName1,
    #pokemonName2 {
-       font-size: 14px;
+       font-size: 20px;
+   }
+
+   #pokemonName2{
+      color: white;
    }
 
    #hpP1,
    #hpP2 {
-       font-size: 16px;
+       font-size: 14px;
    }
+
+   #hpP2 {
+      font-size: 14px;
+      color: white;
+  }
 
    #healthp1,
    #healthp2 {
@@ -135,13 +119,107 @@ body {
    }
 
    #p1Stats {
-       left: 20px;
+       left: 230px;
        font-size: 16px;
    }
 
    #p2Stats {
-       left: 10px;
-       font-size: 18px;
+       left: 80px;
+       font-size: 16px;
+   }
+}
+
+
+@media only screen and (max-width: 768px) {
+
+   #enemyPokemon{
+      position: relative;
+      left: 400px;
+      width: 80px;
+  }
+   #myPokemon {
+       left: -5px;
+       width: 80px;
+   }
+
+   #pokemonName1,
+   #pokemonName2 {
+       font-size: 20px;
+   }
+
+   #pokemonName2{
+      color: white;
+   }
+
+   #hpP1,
+   #hpP2 {
+       font-size: 14px;
+   }
+
+   #hpP2 {
+      font-size: 14px;
+      color: white;
+  }
+
+   #healthp1,
+   #healthp2 {
+       width: 80px;
+   }
+
+   #p1Stats {
+       left: 230px;
+       font-size: 16px;
+   }
+
+   #p2Stats {
+       left: 80px;
+       font-size: 16px;
+   }
+}
+
+@media only screen and (max-width: 576px) {
+   #enemyPokemon{
+      position: relative;
+      left: 200px;
+      width: 80px;
+  }
+   #myPokemon {
+       left: 20px;
+       width: 80px;
+   }
+
+   #pokemonName1,
+   #pokemonName2 {
+       font-size: 20px;
+   }
+
+   #pokemonName2{
+      color: #000000;
+   }
+
+   #hpP1,
+   #hpP2 {
+       font-size: 14px;
+   }
+
+   #hpP2 {
+      font-size: 14px;
+      color: black;
+  }
+
+   #healthp1,
+   #healthp2 {
+       width: 80px;
+   }
+
+   #p1Stats {
+       left: 30px;
+       font-size: 16px;
+   }
+
+   #p2Stats {
+       right: 60px;
+       font-size: 16px;
    }
 
    #container,
@@ -177,7 +255,7 @@ body {
 .switchButtonPressed,
 .medicineButtonPressed,
 .escapeButtonPressed {
-   font-size: 20px;
+   font-size: 30px;
    margin: 5px;
    border-radius: 15px;
    padding: 5px;
@@ -191,7 +269,7 @@ body {
 .switchButtonSwitched,
 .medicineButtonSwitched,
 .escapeButtonSwitched {
-   font-size: 20px;
+   font-size: 30px;
    margin: 5px;
    border-radius: 15px;
    padding: 5px;

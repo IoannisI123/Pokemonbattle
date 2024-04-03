@@ -527,6 +527,10 @@ function switchToArceus(){
 }*/ 
 
 
+
+// I NEED TO MAKE THIS INTO A SINGLE FUNCTION LIKE useAttack function 
+
+
 // Enemy Pokemon random attack
 
 const opAttacks = ['outrage','outrage','shadow claw','shadow claw','earthquake','earthquake','recover'];
