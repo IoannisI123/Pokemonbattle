@@ -180,11 +180,11 @@ body {
 @media only screen and (max-width: 576px) {
    #enemyPokemon{
       position: relative;
-      left: 200px;
+      left: 300px;
       width: 80px;
   }
    #myPokemon {
-       left: 20px;
+       left: -10px;
        width: 80px;
    }
 
@@ -213,7 +213,7 @@ body {
    }
 
    #p1Stats {
-       left: 30px;
+       left: 135px;
        font-size: 16px;
    }
 
@@ -234,6 +234,123 @@ body {
        display: block;
    }
 }
+
+@media only screen and (min-width: 400px) and (max-width:450px) {
+    #enemyPokemon{
+       position: relative;
+       left: 220px;
+       width: 80px;
+   }
+    #myPokemon {
+        left: -10px;
+        width: 80px;
+    }
+ 
+    #pokemonName1,
+    #pokemonName2 {
+        font-size: 20px;
+    }
+ 
+    #pokemonName2{
+       color: #000000;
+    }
+ 
+    #hpP1,
+    #hpP2 {
+        font-size: 14px;
+    }
+ 
+    #hpP2 {
+       font-size: 14px;
+       color: black;
+   }
+ 
+    #healthp1,
+    #healthp2 {
+        width: 80px;
+    }
+ 
+    #p1Stats {
+        left: 30px;
+        font-size: 16px;
+    }
+ 
+    #p2Stats {
+        right: 60px;
+        font-size: 16px;
+    }
+ 
+    #container,
+    #controlContainer {
+        width: 95%;
+    }
+ 
+    .fightButton,
+    .switchButton,
+    .medicineButton,
+    .escapeButton {
+        display: block;
+    }
+ }
+
+
+@media only screen and (max-width: 400px) {
+    #enemyPokemon{
+       position: relative;
+       left: 220px;
+       width: 80px;
+   }
+    #myPokemon {
+        left: -10px;
+        width: 80px;
+    }
+ 
+    #pokemonName1,
+    #pokemonName2 {
+        font-size: 20px;
+    }
+ 
+    #pokemonName2{
+       color: #000000;
+    }
+ 
+    #hpP1,
+    #hpP2 {
+        font-size: 14px;
+    }
+ 
+    #hpP2 {
+       font-size: 14px;
+       color: black;
+   }
+ 
+    #healthp1,
+    #healthp2 {
+        width: 80px;
+    }
+ 
+    #p1Stats {
+        left: 30px;
+        font-size: 16px;
+    }
+ 
+    #p2Stats {
+        right: 60px;
+        font-size: 16px;
+    }
+ 
+    #container,
+    #controlContainer {
+        width: 95%;
+    }
+ 
+    .fightButton,
+    .switchButton,
+    .medicineButton,
+    .escapeButton {
+        display: block;
+    }
+ }
 
 
 /* Button styles */
