@@ -1,10 +1,11 @@
 // Constants
-const DELAY_SPECIAL_REND = 3800;
-const DELAY_DRACO_METEOR = 3800;
+const DELAY_SPECIAL_REND = 3500;
+const DELAY_DRACO_METEOR = 3500;
 const DELAY_RECOVER = 2200;
 const DELAY_RECOVERY_TEXT = 3800;
 const DELAY_THUNDER_DAMAGE = 2200;
-const DELAY_TAKE_DAMAGE = 2800;
+const DELAY_TAKE_DAMAGE = 2500;
+const DELAY_TAKESP_DAMAGE = 2800;
 const DELAY_OP_ATTACK_ONSWITCH = 1300;
 const DELAY_OPPONENT_ATTACK = 6000;
 const DELAY_RESET_TEXT = 7000;
@@ -432,84 +433,127 @@ function switchToArceus(){
         delay = DELAY_SPECIAL_REND;
         delay = DELAY_TAKE_DAMAGE;
         delay = DELAY_OPPONENT_ATTACK;
+        setTimeout(calculateDamage, DELAY_TAKE_DAMAGE);
+        setTimeout(randomOpAttack, DELAY_OPPONENT_ATTACK);
+        hideFightButtons();
         break;
       
         case "Draco Meteor":
         delay = DELAY_DRACO_METEOR;
         delay = DELAY_TAKE_DAMAGE;
         delay = DELAY_OPPONENT_ATTACK;
+        setTimeout(calculateDamage, DELAY_TAKE_DAMAGE);
+        setTimeout(randomOpAttack, DELAY_OPPONENT_ATTACK);
+        hideFightButtons();
         break;
       
         case "Hydro Pump":
         delay = DELAY_SPACIAL_REND;
         delay = DELAY_TAKE_DAMAGE;
         delay = DELAY_OPPONENT_ATTACK;
+        setTimeout(calculateDamage, DELAY_TAKE_DAMAGE);
+        setTimeout(randomOpAttack, DELAY_OPPONENT_ATTACK);
+        hideFightButtons();
         break;
       
         case "Thunder":
         delay = DELAY_SPECIAL_REND;
         delay = DELAY_TAKE_DAMAGE;
         delay = DELAY_OPPONENT_ATTACK;
+        setTimeout(calculateDamage, DELAY_TAKE_DAMAGE);
+        setTimeout(randomOpAttack, DELAY_OPPONENT_ATTACK);
+        hideFightButtons();
         break;
         
         case "Flash Canon":
         delay = DELAY_SPECIAL_REND;
         delay = DELAY_TAKE_DAMAGE;
         delay = DELAY_OPPONENT_ATTACK;
+        setTimeout(calculateDamage, DELAY_TAKE_DAMAGE);
+        setTimeout(randomOpAttack, DELAY_OPPONENT_ATTACK);
+        hideFightButtons();
         break;
        
         case "Aura Sphere":
         delay = DELAY_SPECIAL_REND;
-        delay = DELAY_TAKE_DAMAGE;
+        delay = DELAY_TAKESP_DAMAGE;
         delay = DELAY_OPPONENT_ATTACK;
+
+        setTimeout(calculateSuperEffOpDamageP1, DELAY_TAKESP_DAMAGE);
+        setTimeout(randomOpAttack, DELAY_OPPONENT_ATTACK);
+        hideFightButtons();
         break;
        
         case "Dragon Pulse":
         delay = DELAY_SPECIAL_REND;
         delay = DELAY_TAKE_DAMAGE;
         delay = DELAY_OPPONENT_ATTACK;
+        setTimeout(calculateDamage, DELAY_TAKE_DAMAGE);
+        setTimeout(randomOpAttack, DELAY_OPPONENT_ATTACK);
+        hideFightButtons();
         break;
        
         case "Earth Power":
         delay = DELAY_SPECIAL_REND;
         delay = DELAY_TAKE_DAMAGE;
         delay = DELAY_OPPONENT_ATTACK;
+        setTimeout(calculateDamage, DELAY_TAKE_DAMAGE);
+        setTimeout(randomOpAttack, DELAY_OPPONENT_ATTACK);
+        hideFightButtons();
         break;
 
         case "Shadow Force":
           delay = DELAY_SPECIAL_REND;
           delay = DELAY_TAKE_DAMAGE;
           delay = DELAY_OPPONENT_ATTACK;
+          setTimeout(calculateDamage, DELAY_TAKE_DAMAGE);
+          setTimeout(randomOpAttack, DELAY_OPPONENT_ATTACK);
+          hideFightButtons();
           break;
 
           case "Shadow Sneak":
         delay = DELAY_SPECIAL_REND;
         delay = DELAY_TAKE_DAMAGE;
         delay = DELAY_OPPONENT_ATTACK;
+        setTimeout(calculateDamage, DELAY_TAKE_DAMAGE);
+        setTimeout(randomOpAttack, DELAY_OPPONENT_ATTACK);
+        hideFightButtons();
         break;
 
         case "Will-O-Wisp":
         delay = DELAY_SPECIAL_REND;
         delay = DELAY_TAKE_DAMAGE;
         delay = DELAY_OPPONENT_ATTACK;
+        setTimeout(calculateDamage, DELAY_TAKE_DAMAGE);
+        setTimeout(randomOpAttack, DELAY_OPPONENT_ATTACK);
+        hideFightButtons();
         break;
 
         case "Shadow Claw":
           delay = DELAY_SPECIAL_REND;
           delay = DELAY_TAKE_DAMAGE;
           delay = DELAY_OPPONENT_ATTACK;
+          setTimeout(calculateDamage, DELAY_TAKE_DAMAGE);
+          setTimeout(randomOpAttack, DELAY_OPPONENT_ATTACK);
+          hideFightButtons();
           break;
 
           case "Outrage":
             delay = DELAY_SPECIAL_REND;
             delay = DELAY_TAKE_DAMAGE
             delay = DELAY_OPPONENT_ATTACK;
+            setTimeout(calculateDamage, DELAY_TAKE_DAMAGE);
+            setTimeout(randomOpAttack, DELAY_OPPONENT_ATTACK);
+            hideFightButtons();
             break;
 
             case "Earthquake":
               delay = DELAY_SPECIAL_REND;
               delay = DELAY_TAKE_DAMAGE;
               delay = DELAY_OPPONENT_ATTACK;
+              setTimeout(calculateDamage, DELAY_TAKE_DAMAGE);
+              setTimeout(randomOpAttack, DELAY_OPPONENT_ATTACK);
+              hideFightButtons();
               break;
 
               case "Recover":
@@ -517,6 +561,10 @@ function switchToArceus(){
                 delay = DELAY_RECOVER;
                 delay = DELAY_RECOVERY_TEXT;
                 delay = DELAY_OPPONENT_ATTACK;
+
+                setTimeout(calculateDamage, DELAY_TAKE_DAMAGE);
+                setTimeout(randomOpAttack, DELAY_OPPONENT_ATTACK);
+                hideFightButtons();
                 break;
 
 
@@ -526,10 +574,6 @@ function switchToArceus(){
         return;
     }
     
-    //setTimeout(attackText, delay);
-    setTimeout(calculateDamage, DELAY_TAKE_DAMAGE);
-    setTimeout(randomOpAttack, DELAY_OPPONENT_ATTACK);
-    hideFightButtons();
   }
 
 
@@ -554,6 +598,14 @@ function switchToArceus(){
     hitStrong.play();
     healthP2.value -= Math.floor(Math.random() * (20 - 50) + 50);
     healthBarP2.textContent = healthP2.value;
+
+   }
+
+   function calculateSuperEffOpDamageP1(){
+
+    hitStrong.play();
+    healthP1.value -= Math.floor(Math.random() * (20 - 50) + 50);
+    healthBarP1.textContent = healthP1.value;
 
    }
 
